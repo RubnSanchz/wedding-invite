@@ -7,20 +7,25 @@
 	
 	<head>
 		<title>Rubén & Dalia</title>
-		<script src="wedding-script.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXLxzGYtWWpNExHBaO6cqpB1qA7j-R0J4"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYhOQtckjfqJHYbFwdDwP65yY6vwlaQC4"></script>
+		<style>
+			.fa-church::before {
+			content: "\f51d";
+			}
+		</style>
 		<link rel="stylesheet" type="text/css" href="wedding-style.css">
 	</head>
-
+	
 	<body>
-		<h1>Rubén</h1>
-		<h1>&</h1>
-		<h1>Dalia</h1>
+		<h1>¡Nos casamos!</h1>
 
-		<p2 class="addUpperSpace">Save the date</p2>
-		<p class="addUpperSpace">Jueves 7 de diciembre de 2023</p>
+		<img src="images/Rubén & Dalia.png"/>
+
+		<br/>
+		<p2 class="addUpperSpace pink">Save the date</p2>
+		<p >Jueves 7 de diciembre de 2023</p>
 		<p >Madrid</p>
 		
 		
@@ -35,22 +40,54 @@
 			<div class="grid-item">Segundo(s)</div>
 		  </div>
 
-		<p id="countdownClock"></p>
-
-		  
-		<button class="addUpperSpace" onclick="miFuncion()">Botón</button>
-		<p></p>
+		<!--! Añadir recordatorio calendario -->
+		<i class="material-icons pink">event</i>
+		<a class="pink" href="calendar-reminder.ics"><b>Agregar a mi calendario</b></a>		  
+		<br/>
 		
 		<!--! Revisar por qué no funciona mapa -->
-		<a href="https://www.google.com/maps/place/Parroquia+de+San+Ferm%C3%ADn+de+los+Navarros/@40.4326672,-3.6924765,15z/data=!4m2!3m1!1s0x0:0x85bf579cd0b0d24?sa=X&ved=2ahUKEwjMt6W3wpP-AhUwdKQEHSTOATUQ_BJ6BQidARAI">Parroquia San Fermín de los Navarros</a>
-		<div id="map-church" style="height: 400px; "></div>
+		<p2 class="addUpperSpace green">La ceremonia</p2>
+		<!-- <br/>
+		<img src="images/wedding2.png" alt="ceremonia"> -->
+		<br/>
+		<img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Iglesia_San_Fermin_de_los_Navarros.jpg" alt="parroquia">
+		<br/>
 
-
-		<!--! Añadir mapa y horario al ABC con horario de salida-->
+		<a href="https://www.google.com/maps/place/Parroquia+de+San+Ferm%C3%ADn+de+los+Navarros/@40.4326672,-3.6924765,15z/data=!4m2!3m1!1s0x0:0x85bf579cd0b0d24?sa=X&ved=2ahUKEwjMt6W3wpP-AhUwdKQEHSTOATUQ_BJ6BQidARAI" class="color-def">
+			<b>PARROQUIA SAN FERMÍN DE LOS NAVARROS</b>
+		</a>
+		<p>12:00 será la ceremonia, por favor, estad 30 min antes</p>
+		<p>P.º de Eduardo Dato, 10, 28010 Madrid</p>
 		
-		<!--! Añadir recordatorio calendar -->
+		
+		<!--! Añadir mapa y horario al ABC con horario de salida-->
+		<br/>
+		<p2 class="addUpperSpace green">La celebración</p2>
+		<br/>
+		<img src="https://www.laventanadelarte.es/images/madrid/8086/centro-8086-130618190308ce3fc7.jpg" alt="celebracion">
+		<br/>
+		<a href="https://www.google.com/maps/place/Edificio+ABC+Serrano,+28006+Madrid/@40.432245,-3.6869492,17z/data=!4m6!3m5!1s0xd42289496e077a3:`
+				0x7a8ef62d6dcb8159!8m2!3d40.432245!4d-3.6869492!16s%2Fg%2F120z_bf7?hl=es" class="color-def">
+			<b>EDIFICIO ABC SERRANO</b>
+		</a>
+		<p> 14:00 pm aprox.</p>
+		<p> entrada por Calle de Serrano, 61, 28010 Madrid</p><br/>
+		<br/>
 
+		<div id="map-container">
+			<div id="map"></div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		
+
+		
 		<!--! Añadir cuenta para pago -->
+		<div>
+
+		</div>
 
 
 		<section>
@@ -60,8 +97,8 @@
 			  <div>
 				<h2>Review my work</h2>
 				<p><i class="fab fa-github"></i><a href="https://github.com/RubnSanchz"> Repo</a></p>
-				<p><i class="material-icons">photo_camera</i><a href="https://github.com/RubnSanchz/wedding-invite/fonts"> Images</a></p>
-				<p><i class="material-icons">text_fields</i><a href="https://github.com/RubnSanchz/wedding-invite/fonts"> Fonts</a></p>
+				<p><i class="material-icons">photo_camera</i><a href="https://github.com/RubnSanchz/wedding-invite/tree/main/images"> Images</a></p>
+				<p><i class="material-icons">text_fields</i><a href="https://github.com/RubnSanchz/wedding-invite/tree/main/fonts"> Fonts</a></p>
 				<p><i class="material-icons">receipt_long</i><a href="https://www.notion.so/Wedding-Plan-e4bb12cf3f014071911442c927fe94fe"> Road Map</a></p>
 			  </div>
 			  <div>
@@ -69,7 +106,7 @@
 				<a href="https://fonts.google.com/icons">Google Icons</a>
 				<a href="https://fontawesome.com/">Font Awesome Icons</a>
 				<a href="https://www.canva.com/">Brand Logo</a>
-				<a href="https://console.cloud.google.com/apis/credentials/key">Api Maps</a>
+				<a href="https://console.cloud.google.com/apis/credentials/key">Api Google Maps</a>
 			  </div>
 			</div>
 		  </footer>
@@ -85,6 +122,9 @@
 			</div>
 		  </footer>
 		</section>
+
+		<script src="wedding-script.js"></script>
+
 	</body>
 
 </html>

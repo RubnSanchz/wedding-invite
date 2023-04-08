@@ -1,5 +1,7 @@
-const weddingDate = new Date("Dec 7, 2023 12:00:00 GMT+0200").getTime();
-
+const weddingDate = new Date("Dec 7, 2023 12:00:00 GMT+0200").getTime()
+const symbol1 = "http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png";
+const churchName = 'Parroquia San Fermín de los Navarros'
+const celebrationName = 'Edificio ABC Serrano'
 
 function miFuncion() {
   alert("¡Gracias por venir!");
@@ -35,15 +37,65 @@ var x = setInterval(function() {
 
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map-church'), {
+  const churchLocations = {lat: 40.432624, lng: -3.692425}
+  const celebrationLocations = {lat: 40.4323844, lng: -3.6871238}
+  const center = meanPosition(churchLocations, celebrationLocations)
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: center,
     zoom: 15,
-    center: {lat: 40.4209193, lng: -3.6932415}
   });
-  var marker = new google.maps.Marker({
-    position: {lat: 40.4209193, lng: -3.6932415},
+
+  var pinSVGFilled = "M 12,2 C 8.1340068,2 5,5.1340068 5,9 c 0,5.25 7,13 7,13 0,0 7,-7.75 7,-13 0,-3.8659932 -3.134007,-7 -7,-7 z";
+  var labelOriginFilled =  new google.maps.Point(12,9);
+  var markerImage1 = { 
+    path: pinSVGFilled,
+    anchor: new google.maps.Point(12,17),
+    fillOpacity: 1,
+    fillColor: "#8d65c5",
+    strokeWeight: 2,
+    strokeColor: "white",
+    scale: 2,
+    labelOrigin: labelOriginFilled
+  };
+
+  var markerImage2 = { 
+    path: pinSVGFilled,
+    anchor: new google.maps.Point(12,17),
+    fillOpacity: 1,
+    fillColor: "#8d65c5",
+    strokeWeight: 2,
+    strokeColor: "white",
+    scale: 2,
+    labelOrigin: labelOriginFilled
+  };
+
+  const markerChurch = new google.maps.Marker({
+    map,
+    position: churchLocations,
+    title: churchName,
+    label: {
+      text: "✝️",
+      fontSize: "18px",
+    },
+    icon: markerImage1
+  });
+
+  var markerCeleb = new google.maps.Marker({
+    position: celebrationLocations,
     map: map,
-    title: 'Parroquia San Fermín de los Navarros'
+    title: celebrationName,
+    label: {
+      text: "🥂",
+      fontSize: "18px",
+    },
+    icon: markerImage2
   });
 }
 
 initMap();
+
+function meanPosition(pos1, pos2) {
+  var latitude = (pos1.lat + pos2.lat) /2 
+  var longitude = (pos1.lng + pos2.lng) /2 
+  return {lat: latitude, lng: longitude}
+}
