@@ -10,6 +10,8 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXLxzGYtWWpNExHBaO6cqpB1qA7j-R0J4"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap" rel="stylesheet">
 		<style>
 			.fa-church::before {
 			content: "\f51d";
@@ -29,14 +31,14 @@
 		
 		
 		<div class="grid-container">
-			<div class="grid-item" id="days">Columna 1</div>
-			<div class="grid-item" id="hours">Columna 2</div>
-			<div class="grid-item" id="mins">Columna 3</div>
-			<div class="grid-item" id="secs">Columna 4</div>
-			<div class="grid-item">Día(s)</div>
-			<div class="grid-item">Hora(s)</div>
-			<div class="grid-item">Minuto(s)</div>
-			<div class="grid-item">Segundo(s)</div>
+			<div class="grid-item number" id="days">Columna 1</div>
+			<div class="grid-item number" id="hours">Columna 2</div>
+			<div class="grid-item number" id="mins">Columna 3</div>
+			<div class="grid-item number" id="secs">Columna 4</div>
+			<div class="grid-item martel">Día(s)</div>
+			<div class="grid-item martel">Hora(s)</div>
+			<div class="grid-item martel">Minuto(s)</div>
+			<div class="grid-item martel">Segundo(s)</div>
 		  </div>
 
 		<!--* Calendar reminder -->
@@ -87,15 +89,15 @@
 		<br/>
 		
 
-		
 		<div>
 			<p>Nos gustaría celebrar nuestra boda con la gente más importante de nuestras vidas, y tú eres una de ellas. Si estás buscando hacernos un regalo, agradeceríamos cualquier ayuda para cubrir los gastos de la celebración.</p>
-			<button >Ver cuenta corriente</button>
-			<p class="hide" id="account">23456</p>
+			<br/>
+			<button class="boton" onclick="unhide()">Ver cuenta corriente</button>
+			<br/>
+			<p class="hide" id="account"><br/>BBVA &numsp;<b>ES57 0182 1294 1302 0065 7181</b></p>
 		</div>
 
 		<br/>
-
 
 
 		<section>

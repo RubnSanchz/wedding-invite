@@ -3,10 +3,6 @@ const symbol1 = "http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png";
 const churchName = 'Parroquia San Fermín de los Navarros'
 const celebrationName = 'Edificio ABC Serrano'
 
-function miFuncion() {
-  alert("¡Gracias por venir!");
-}
-
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -98,4 +94,9 @@ function meanPosition(pos1, pos2) {
   var latitude = (pos1.lat + pos2.lat) /2 
   var longitude = (pos1.lng + pos2.lng) /2 
   return {lat: latitude, lng: longitude}
+}
+
+
+function unhide() {
+  document.getElementById("account").classList = "";
 }
