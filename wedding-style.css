@@ -1,24 +1,12 @@
 @font-face {
 	font-family: 'Miama';
-	src: url('wedding-invite/fonts/Miama.ttf');
+	src: url('wedding-invite/fonts/Miama.ttf') ;
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'Cascadia';
 	src: url('wedding-invite/fonts/CascadiaCode.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Abhaya';
-	src: url('wedding-invite/fonts/AbhayaLibre-Medium.ttf');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'Abhaya-bold';
-	src: url('wedding-invite/fonts/AbhayaLibre-Bold.ttf');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -41,9 +29,8 @@
 
 h1 {
 	text-align: center;
-	font-family: 'Miama';
+	font-family: 'Satisfy', cursive;
 	font-size: 10vh;
-
 	background: linear-gradient(0.25turn, #e66465, var(--color-purple));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -51,7 +38,7 @@ h1 {
 	line-height: 1.2;
 	word-wrap: break-word;
 	width: 100%;
-	max-width: 500px;
+	max-width: 900px;
 	margin: 0 auto;
 	margin-bottom: -20px;
 	transition: all 0.3s ease;
@@ -61,7 +48,7 @@ h1 {
 
 body {
 	text-align: center;
-	font-family: 'Abhaya';
+	font-family: 'Abhaya Libre';
 	background-color: linear-gradient(172deg, #f0f0e4 50%, var(--color-dark-gray) 300%);
 	font-size: 1.5vh;
 	color: var(--color-dark-gray);
@@ -69,7 +56,6 @@ body {
 }
 
 p {
-	font-family: 'Abhaya';
 	margin: 0;
 }
 
@@ -81,14 +67,9 @@ p2 {
 }
 
 a {
-	font-family: 'Abhaya';
 	color: var(--color-soft-pink);
 	text-decoration: none;
   }  
-
-div {
-	font-family: 'Abhaya';
-}
 
 .addUpperSpace {
 	margin-top: 200px;
@@ -171,7 +152,7 @@ div {
   @media (width >= 620px) {
 	footer {
 	  margin: 0 auto;
-	  max-width: 600px;
+	  max-width: 900px;
 	  padding: 0;
 	}
   }
@@ -299,3 +280,27 @@ div {
 	background-image: url('/wedding-invite/images/abc_serrano.jpg');
 }
 
+.boton {
+	color: #ffffff !important;
+    border-width: 0px !important;
+    border-radius: 22px;
+    font-size: 30px;
+    font-family: 'Martel Sans',Helvetica,Arial,Lucida,sans-serif!important;
+    font-weight: 600!important;
+    background-color: #A38A92;
+}
+
+
+.martel {
+	font-family: 'Abhaya Libre', serif !important;
+	font-size: 20px;
+}
+
+.number {
+	font-family: 'Satisfy',Helvetica,Arial,Lucida,sans-serif !important;
+	font-weight: bold;
+}
+
+.hide {
+	visibility: hidden;
+}
