@@ -63,6 +63,7 @@ body {
 	text-align: center;
 	font-family: 'Abhaya';
 	background-color: linear-gradient(172deg, #f0f0e4 50%, var(--color-dark-gray) 300%);
+	font-size: 1.5vh;
 	color: var(--color-dark-gray);
 	font-family: Arial, sans-serif;
 }
@@ -75,6 +76,8 @@ p {
 p2 {
 	font-family: 'Miama';
 	font-size: 7vh;
+	margin-top: 200px;
+	margin-bottom: 20vh;
 }
 
 a {
@@ -88,7 +91,8 @@ div {
 }
 
 .addUpperSpace {
-	margin-top: 50px;
+	margin-top: 200px;
+	margin-bottom: 20vh;
 }
 
 
@@ -105,8 +109,8 @@ div {
   
 /* Maps */
 #map-container {
-	width: 400px;
-	height: 400px;
+	width: 50vh;
+	height: 50vh;
 	margin: 0 auto;
   }
   
@@ -200,7 +204,7 @@ div {
   
   footer h2 {
 	margin: 0;
-	font-size: 16px;
+	font-size: 24px;
 	font-weight: 400;
 	color: var(--color-soft);
   }
@@ -223,7 +227,7 @@ div {
   }
   
   footer.bottom .links > a {
-	font-size: 24px;
+	font-size: 20px;
   }
   
   @media (width < 420px) {
@@ -248,7 +252,50 @@ div {
   }
 
   .material-icons {
-	font-size: 15px;
+	font-size: 24px;
   }
   
-  
+/* Parallax */
+.parallax {
+	background-size: 100%;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: white;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.parallax p {
+	color: #fff;
+	font-size: 3rem;
+	background-color: rgba(47, 79, 79, 0.5);
+	text-decoration: overline underline;
+}
+
+.parallax2 {
+	background-size: 90%;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: white;
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#section0 {
+	background-image: url('/wedding-invite/images/Rubén\ &\ Dalia.png');
+}
+
+#section1 {
+	background-image: url('/wedding-invite/images/Iglesia_San_Fermin_de_los_Navarros.jpg');
+}
+
+#section2 {
+	background-image: url('/wedding-invite/images/abc_serrano.jpg');
+}
+
