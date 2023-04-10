@@ -3,6 +3,8 @@ const symbol1 = "http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png";
 const churchName = 'Parroquia San Fermín de los Navarros'
 const celebrationName = 'Edificio ABC Serrano'
 
+const onMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -38,7 +40,7 @@ function initMap() {
   const center = meanPosition(churchLocations, celebrationLocations)
   var map = new google.maps.Map(document.getElementById('map'), {
     center: center,
-    zoom: 15,
+    zoom: onMobile? 17 : 15,
   });
 
   var pinSVGFilled = "M 12,2 C 8.1340068,2 5,5.1340068 5,9 c 0,5.25 7,13 7,13 0,0 7,-7.75 7,-13 0,-3.8659932 -3.134007,-7 -7,-7 z";
