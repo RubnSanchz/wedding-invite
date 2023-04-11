@@ -2,6 +2,7 @@ const weddingDate = new Date("Dec 7, 2023 12:00:00 GMT+0200").getTime()
 const symbol1 = "http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png";
 const churchName = 'Parroquia San Fermín de los Navarros'
 const celebrationName = 'Edificio ABC Serrano'
+const ACCOUNT = 'ES57 0182 1294 1302 0065 7181'
 
 const onMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
@@ -102,3 +103,24 @@ function meanPosition(pos1, pos2) {
 function unhide() {
   document.getElementById("account").classList = "";
 }
+
+
+const copyText = document.getElementById('account');
+
+// Agrega un evento de clic al elemento <p>
+copyText.addEventListener('click', () => {
+  const textToCopy = ACCOUNT;
+  const textarea = document.createElement('textarea');
+  textarea.value = textToCopy; // Establece el valor del textarea con el texto a copiar
+  document.body.appendChild(textarea); // Agrega el textarea al DOM
+  textarea.select(); // Selecciona el contenido del textarea
+  document.execCommand('copy'); // Copia el contenido al portapapeles
+  document.body.removeChild(textarea); // Elimina el textarea del DOM
+});
+
+
+// Oculta el indicador después de que se haya desplazado un poco
+window.addEventListener('scroll', function() {
+  var scrollIndicator = document.querySelector('.scroll-indicator');
+  scrollIndicator.style.opacity = 0;
+});
