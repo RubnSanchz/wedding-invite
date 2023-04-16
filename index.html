@@ -25,12 +25,17 @@
 			<span class="material-icons arrow">arrow_circle_down</span>
 		</div>
 
-
-		<h1>¡Nos casamos!</h1>
-		<section class="parallax2" id="section0">
-		</section>
+		<img src="images/Rubén & Dalia.png" style="width: 90%;">
 		<br/>
-		<p2 class="addSpace fancy pink">Save the date</p2>
+		<br/>
+		
+		<!-- <section class="parallax2" id="section0">
+		</section> -->
+		<img src="images/im10.jpg" style="width: 100%;">
+		<br/>
+		<p class="addSpace fancy green" style="margin-bottom: 5vh;">¡Nos casamos!</p>
+		<p>y nos gustaría que nos acompañáseis en este día tan especial para nosotros</p>
+		<p class="fancy pink">Save the date</p>
 		<p >Jueves 7 de diciembre de 2023</p>
 		<p >Madrid</p>
 		
@@ -54,7 +59,7 @@
 
 		
 		<!--* Church -->
-		<p class="addSpace fancy green">La ceremonia</p2>
+		<p class="addSpace fancy green">La ceremonia</p>
 		<br/>
 
 		<section class="parallax" id="section1">
@@ -67,7 +72,7 @@
 		</a>
 		<br/>
 		<br/>
-		<p><span class="enfasis">12:00</span> comenzará la ceremonia. Es <span class="enfasis">necesario</span> que los invitados estén <span class="enfasis">30 min antes</span></p>
+		<p><span class="enfasis">12:00</span> comenzará la ceremonia. Es <span class="enfasis">necesario</span> que los invitados estéis <span class="enfasis">30 min antes</span></p>
 		<p>P.º de Eduardo Dato, 10, 28010 Madrid</p>
 
 		<hr class="separator">
@@ -93,11 +98,30 @@
 		<hr class="separator">
 
 		<!--* Map -->
-		<a a href="https://www.google.com/maps/place/Parroquia+de+San+Ferm%C3%ADn+de+los+Navarros/@40.4326672,-3.6924765,15z/data=
-		!4m2!3m1!1s0x0:0x85bf579cd0b0d24?sa=X&ved=2ahUKEwjMt6W3wpP-AhUwdKQEHSTOATUQ_BJ6BQidARAI" class="color-def"> <p class="enfasis">✝️ La ceremonia</p></a>
+		<a href="https://www.google.com/maps/place/Parroquia+de+San+Ferm%C3%ADn+de+los+Navarros/@40.4326672,-3.6924765,15z/data=
+		!4m2!3m1!1s0x0:0x85bf579cd0b0d24?sa=X&ved=2ahUKEwjMt6W3wpP-AhUwdKQEHSTOATUQ_BJ6BQidARAI" class="color-def"> <p class="enfasis">💒 La ceremonia</p></a>
 		<a href="https://www.google.com/maps/place/Edificio+ABC+Serrano,+28006+Madrid/@40.432245,-3.6869492,17z/data=!4m6!3m5!1s0xd42289496e077a3:`
 			0x7a8ef62d6dcb8159!8m2!3d40.432245!4d-3.6869492!16s%2Fg%2F120z_bf7?hl=es" class="color-def"> <p class="enfasis">🥂 La celebración</p></a>
 		<br/>
+
+		<div id="style-selector-control" class="map-control">
+			<input
+			  type="radio"
+			  name="show-hide"
+			  id="hide-poi"
+			  class="selector-control"
+			  checked="checked"
+			/>
+			<label for="hide-poi">Minimizar información</label>
+			<input
+			  type="radio"
+			  name="show-hide"
+			  id="show-poi"
+			  class="selector-control"
+			/>
+			<label for="show-poi">Mostar todos los lugares</label>
+		</div>
+
 		<div id="map-container">
 			<div id="map"></div>
 		</div>
@@ -105,7 +129,8 @@
 		
 		<!--* Contact -->
 		<div>
-			<p>Por favor, confírmanos tu asistencia y cuántos vais a venir. Podéis escribirnos por privado.</p>
+			<p>Por favor, confirmadnos antes del <span class="enfasis">10 de noviembre</span> vuestra <span class="enfasis">asistencia</span>, <span class="enfasis">cuántos</span> vais a venir y si tenéis alguna <span class="enfasis">alergia</span> o <span class="enfasis">intolerancia</span>.</p>
+			<br>
 			<a class="fab fa-whatsapp green" href="https://api.whatsapp.com/send?phone=+34649344018&text=Hola,%20cuenta%20conmigo%20en%20tu%20boda"> Rubén: <span class="enfasis">649344018</span></a>
 			<br/>
 			<a class="fab fa-whatsapp green" href="https://api.whatsapp.com/send?phone=+34633882303&text=Hola,%20cuenta%20conmigo%20en%20tu%20boda"> Dalia: <span class="enfasis">633882303</span></a>
@@ -115,11 +140,16 @@
 
 		<!--* Money account -->
 		<div>
-			<p>Nos gustaría celebrar nuestra boda con la gente más importante de nuestras vidas, y tú eres una de ellas. Si estás buscando hacernos un regalo, agradeceríamos cualquier ayuda para cubrir los gastos de la celebración.</p>
+			<p>Vuestra presencia es para nosotros lo más importante. No obstante, si deseáis hacernos un regalo aquí os dejamos nuestro número de cuenta</p>
 			<br/>
-			<button class="boton" onclick="unhide()">Ver cuenta corriente</button>
+			<button class="boton" onclick="unhide()"><span class="material-icons">account_balance</span> Mostar cuenta</button>
 			<br/>
 			<p class="hide" id="account"><br/>BBVA &numsp;<b>ES57 0182 1294 1302 0065 7181</b> <span class="material-icons green">content_copy</span></p>
+			<div id="messageContainer" style="display:none;">
+				<div id="messageBubble">
+				  <p id="messageText">Texto copiado</p>
+				</div>
+			</div>
 		</div>
 
 		<br/>

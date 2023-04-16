@@ -17,8 +17,8 @@
 h1 {
 	text-align: center;
 	font-family: 'Satisfy', cursive;
-	font-size: 10vh;
-	background: linear-gradient(0.25turn, #e66465, var(--color-purple));
+	font-size: 7vh;
+	background: linear-gradient(0.25turn, #65967c, var(--color-pink));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	text-align: center;
@@ -94,6 +94,11 @@ a {
 	color: var(--color-dark-green);
 }
 .color-def {
+	color: var(--color-dark-gray);
+}
+
+.shade {
+	font-size: 0.9vh;
 	color: var(--color-dark-gray);
 }
 
@@ -256,7 +261,7 @@ a {
 }
 
 #section0 {
-	background-image: url('/wedding-invite/images/Rubén\ &\ Dalia.png');
+	background-image: url('/wedding-invite/images/im9.jpg');
 }
 
 #section1 {
@@ -307,8 +312,8 @@ a {
 
 .scroll-indicator {
 	position: absolute;
-	bottom: 3vh; 	/* Ajusta la posición vertical */
-	right: 3.5vh; 	/* Ajusta la posición horizontal */
+	bottom: 15%; 	/* Ajusta la posición vertical */
+	right: 15%; 	/* Ajusta la posición horizontal */
 	transform: translateX(-50%);
 	display: flex;
 	justify-content: center;
@@ -339,3 +344,27 @@ a {
 	  transform: translateY(-5px);
 	}
   }
+  
+
+  #messageContainer {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  #messageBubble {
+	background-color: var(--color-dark-gray);
+	border-radius: 24px;
+	padding: 12px 24px;
+  }
+  
+  #messageText {
+	color: #FFF;
+	margin: 0;
+	font-size: 16px;
+  }
+  
