@@ -19,6 +19,7 @@ h1 {
 	font-family: 'Satisfy', cursive;
 	font-size: 5vh;
 	background: linear-gradient(0.25turn, #65967c, var(--color-pink));
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	text-align: center;
@@ -82,16 +83,22 @@ a {
 
 .fancy {
 	font-family: 'Great Vibes', cursive;
-	font-size: 7vh;
-	margin-top: 200px;
-	margin-bottom: 20vh;
+	font-size: 5vh;
+	margin-top: 5vh;
+	margin-bottom: 1vh;
 }
 
 .pink {
 	color: var(--color-pink-dark);
 }
+.pink-bg {
+	background-color: var(--color-pink-dark);
+}
 .green {
 	color: var(--color-dark-green);
+}
+.green-bg {
+	background-color: var(--color-dark-green);
 }
 .color-def {
 	color: var(--color-dark-gray);
@@ -228,6 +235,11 @@ a {
 	font-size: 24px;
   }
   
+  .size-16 {
+	font-size: 16px;
+	margin-right: 2px;
+  }
+
 /* Parallax */
 .parallax {
 	background-size: 100%;
@@ -261,31 +273,39 @@ a {
 }
 
 #section0 {
-	background-image: url('/wedding-invite/images/im9.jpg');
+	background-image: url('images/im9.jpg');
 }
 
 #section1 {
-	background-image: url('/wedding-invite/images/Iglesia_San_Fermin_de_los_Navarros.jpg');
+	background-image: url('images/Iglesia_San_Fermin_de_los_Navarros.jpg');
 }
 
 #section2 {
-	background-image: url('/wedding-invite/images/abc_serrano.jpg');
+	background-image: url('images/abc_serrano.jpg');
 }
 
 .boton {
 	color: #ffffff !important;
     border-width: 0px !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
     border-radius: 22px;
-    font-size: 30px;
+    font-size: 16px;
     font-family: 'Martel Sans',Helvetica,Arial,Lucida,sans-serif!important;
-    font-weight: 600!important;
-    background-color: #A38A92;
+    font-weight: 10px;
+	margin-bottom: 1vh;
 }
 
+.center-boton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 .martel {
 	font-family: 'Abhaya Libre', serif !important;
-	font-size: 20px;
+	font-size: 12px;
 }
 
 .number {
@@ -300,12 +320,11 @@ a {
 .separator {
 	border: none;
 	border-top: 1px solid var(--color-pink-dark);
-	margin: 2vh 20vw; 
+	margin: 8vh 20vw; 
 }
 
 .enfasis {
 	font-weight: bolder;
-	color: var(--color-pink-dark);
 }
 
 
@@ -360,6 +379,7 @@ a {
 	background-color: var(--color-dark-gray);
 	border-radius: 24px;
 	padding: 12px 24px;
+	width: 20vh;
   }
   
   #messageText {
