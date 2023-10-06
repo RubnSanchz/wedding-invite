@@ -142,7 +142,7 @@ function unhide() {
 
 
 const copyText = document.getElementById('account');
-const messageContainer = document.getElementById('messageContainer');
+const messageContainer = document.getElementById('copyMessage');
 
 // Agrega un evento de clic al elemento <p>
 copyText.addEventListener('click', () => {

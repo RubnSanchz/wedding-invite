@@ -4,7 +4,6 @@
 	--color-purple: #9198e5;
 	--color-pink: #ff99dd;
 	--color-pink-dark: #a38991;
-	--color-pink-border: #be8f9d;
 	--color-pink-soft: #f9d2db;
 	--color-green: #98e2bb;
 	--color-green-dark: #65967c;
@@ -93,7 +92,7 @@ a {
 	background-color: var(--color-pink-dark);
 }
 .pink-border {
-	border: var(--color-pink-border);
+	border: var(--color-pink-dark);
 	border-left-style: solid;
 	border-left-width: 0.8vw;
 }
@@ -316,7 +315,7 @@ footer.bottom .links>a {
 
 .martel {
 	font-family: 'Abhaya Libre', serif !important;
-	font-size: 1.1vh;
+	font-size: 0.8vh;
 }
 
 .number {
