@@ -7,7 +7,6 @@ const churchLocations = {lat: 40.432624, lng: -3.692425};
 const celebrationLocations = {lat: 40.4323844, lng: -3.6871238}
 const center = meanPosition(churchLocations, celebrationLocations)
 
-const onIPhone = /Phone|iPad|iPod/i.test(navigator.userAgent);
 const onMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const styles = {
@@ -176,7 +175,6 @@ window.addEventListener('scroll', function() {
 
 //! Do parallax effect on iPhone
 document.addEventListener('DOMContentLoaded', function() {
-  if (onIPhone) {
     var parallaxElements = document.querySelectorAll('.parallax');
     
     parallaxElements.forEach(function(element) {
@@ -192,5 +190,4 @@ document.addEventListener('DOMContentLoaded', function() {
         element.innerHTML = '';
         element.appendChild(container);
     });
-  }
 });
