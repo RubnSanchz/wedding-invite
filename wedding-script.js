@@ -173,21 +173,13 @@ window.addEventListener('scroll', function() {
   scrollIndicator.style.opacity = 0;
 });
 
-//! Do parallax effect on iPhone
-document.addEventListener('DOMContentLoaded', function() {
-    var parallaxElements = document.querySelectorAll('.parallax');
-    
-    parallaxElements.forEach(function(element) {
-        var container = document.createElement('div');
-        container.classList.add('parallax-container');
-        
-        var content = document.createElement('div');
-        content.classList.add('parallax-content');
-        content.style.backgroundImage = element.style.backgroundImage;
-        content.innerHTML = element.innerHTML;
-        
-        container.appendChild(content);
-        element.innerHTML = '';
-        element.appendChild(container);
-    });
-});
+//! Remove parallax effect on iPhone
+const isiPhone = /iPhone|iPod/.test(navigator.userAgent);
+
+if (isiPhone) {
+  // Deshabilitar el efecto de paralaje
+  document.querySelectorAll('.parallax').forEach(element => {
+    element.style.backgroundAttachment = 'scroll';
+  });
+}
+
