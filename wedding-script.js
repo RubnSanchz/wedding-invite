@@ -181,5 +181,7 @@ if (isiPhone) {
   document.querySelectorAll('.parallax').forEach(element => {
     element.style.backgroundAttachment = 'scroll';
   });
+  // Reduicir altura de imagen2
+  document.getElementById('section2').classList.add('height-minor');
 }
 

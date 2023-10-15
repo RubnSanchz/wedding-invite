@@ -254,7 +254,7 @@ footer.bottom .links>a {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-color: white;
-	height: 80vh;
+	height: 60vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -269,6 +269,9 @@ footer.bottom .links>a {
 	text-decoration: overline underline;
 }
 
+.height-minor {
+	height: 28vh;
+}
 
 #section0 {
 	background-image: url('images/im9.jpg');
