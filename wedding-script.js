@@ -7,6 +7,7 @@ const churchLocations = {lat: 40.432624, lng: -3.692425};
 const celebrationLocations = {lat: 40.4323844, lng: -3.6871238}
 const center = meanPosition(churchLocations, celebrationLocations)
 
+const onIPhone = /Phone|iPad|iPod/i.test(navigator.userAgent);
 const onMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 const styles = {
@@ -19,7 +20,7 @@ const styles = {
   ],
 };
 
-// Update the count down every 1 second
+//! Update the count down every 1 second
 var x = setInterval(function() {
   // Get today's date and time
   var now = new Date().getTime();
@@ -46,6 +47,7 @@ var x = setInterval(function() {
   }
 }, 1000);
 
+//! Call Google maps API
 function initMap() {
   const churchLocations = {lat: 40.432624, lng: -3.692425}
   const celebrationLocations = {lat: 40.4323844, lng: -3.6871238}
@@ -77,7 +79,7 @@ function initMap() {
 
 initMap();
 
-
+//! Markers on map
 function initMarkers(map) {
   var pinSVGFilled = "M 12,2 C 8.1340068,2 5,5.1340068 5,9 c 0,5.25 7,13 7,13 0,0 7,-7.75 7,-13 0,-3.8659932 -3.134007,-7 -7,-7 z";
   var labelOriginFilled =  new google.maps.Point(12,9);
@@ -135,16 +137,15 @@ function meanPosition(pos1, pos2) {
   return {lat: latitude, lng: longitude}
 }
 
-
+//! Logic for show account
 function unhide() {
   document.getElementById("account").classList = "";
 }
 
-
+//! Copy account number to clipboard
 const copyText = document.getElementById('account');
 const messageContainer = document.getElementById('copyMessage');
 
-// Agrega un evento de clic al elemento <p>
 copyText.addEventListener('click', () => {
   const textToCopy = ACCOUNT;
   const textarea = document.createElement('textarea');
@@ -167,10 +168,29 @@ copyText.addEventListener('click', () => {
   }, 2500);
 });
 
-
-
-// Oculta el indicador después de que se haya desplazado un poco
+//! Hide arrow down on scrollling
 window.addEventListener('scroll', function() {
   var scrollIndicator = document.querySelector('.scroll-indicator');
   scrollIndicator.style.opacity = 0;
+});
+
+//! Do parallax effect on iPhone
+document.addEventListener('DOMContentLoaded', function() {
+  if (onIPhone) {
+    var parallaxElements = document.querySelectorAll('.parallax');
+    
+    parallaxElements.forEach(function(element) {
+        var container = document.createElement('div');
+        container.classList.add('parallax-container');
+        
+        var content = document.createElement('div');
+        content.classList.add('parallax-content');
+        content.style.backgroundImage = element.style.backgroundImage;
+        content.innerHTML = element.innerHTML;
+        
+        container.appendChild(content);
+        element.innerHTML = '';
+        element.appendChild(container);
+    });
+  }
 });
