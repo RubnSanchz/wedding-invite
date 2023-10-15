@@ -22,7 +22,6 @@ h1 {
 	line-height: 1.1vh;
 	word-wrap: break-word;
 	width: 100%;
-	max-width: 900px;
 	margin: 0 auto;
 	margin-bottom: -20px;
 	transition: all 0.3s ease;
