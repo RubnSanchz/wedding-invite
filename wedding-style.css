@@ -29,16 +29,6 @@ h1 {
 
 }
 
-
-body {
-	text-align: center;
-	font-family: 'Abhaya Libre';
-	background-color: linear-gradient(172deg, #f0f0e4 50%, var(--color-dark-gray) 300%);
-	font-size: 1.1vh;
-	color: var(--color-dark-gray);
-	font-family: Arial, sans-serif;
-}
-
 p {
 	margin: 0;
 }
@@ -124,6 +114,13 @@ a {
 html,
 body {
 	height: 100%;
+	font-size: 16px; /* Esto es el tamaño base */
+	text-align: center;
+	font-family: 'Abhaya Libre';
+	background-color: linear-gradient(172deg, #f0f0e4 50%, var(--color-dark-gray) 300%);
+	font-size: 1.5vh;
+	color: var(--color-dark-gray);
+	font-family: Arial, sans-serif;
 }
 
 section {
@@ -247,7 +244,7 @@ footer.bottom .links>a {
 }
 
 .size-1_5 {
-	font-size: 1.5vh;
+	font-size: 1.55vh;
 }
 
 /* Parallax */
@@ -267,22 +264,11 @@ footer.bottom .links>a {
 
 .parallax p {
 	color: #fff;
-	font-size: 3rem;
+	font-size: 2rem;
 	background-color: rgba(47, 79, 79, 0.5);
 	text-decoration: overline underline;
 }
 
-.parallax2 {
-	background-size: 90%;
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-color: white;
-	height: 50vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 
 #section0 {
 	background-image: url('images/im9.jpg');
@@ -317,12 +303,12 @@ footer.bottom .links>a {
 
 .martel {
 	font-family: 'Abhaya Libre', serif !important;
-	font-size: 0.8vh;
 }
 
 .number {
 	font-family: 'Satisfy', Helvetica, Arial, Lucida, sans-serif !important;
 	font-weight: bold;
+	font-size: 1.5em;
 }
 
 .hide {
