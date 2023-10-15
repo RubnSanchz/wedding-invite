@@ -8,6 +8,7 @@ const celebrationLocations = {lat: 40.4323844, lng: -3.6871238}
 const center = meanPosition(churchLocations, celebrationLocations)
 
 const onMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const iniPhone = /iPhone|iPod/.test(navigator.userAgent);
 
 const styles = {
   default: [],
@@ -174,9 +175,7 @@ window.addEventListener('scroll', function() {
 });
 
 //! Remove parallax effect on iPhone
-const isiPhone = /iPhone|iPod/.test(navigator.userAgent);
-
-if (isiPhone) {
+if (iniPhone) {
   // Deshabilitar el efecto de paralaje
   document.querySelectorAll('.parallax').forEach(element => {
     element.style.backgroundAttachment = 'scroll';
