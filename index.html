@@ -1,6 +1,6 @@
 <!-- GESTOR DE INVITACIONES DE BODA PARA RUBÉN SÁNCHEZ Y DALIA KASSEM
 	* FECHA: 07/12/2023
-	* LUGAR: 
+	* LUGAR: Madrid
 -->
 <!DOCTYPE html>
 <html>
@@ -64,17 +64,20 @@
 		<div class="grid-item martel">Minute(s)</div>
 		<div class="grid-item martel">Second(s)</div>
 	</div>
+	<br />
 
 	<!--* Calendar reminder -->
-	<div class="center-boton">
-		<i class="material-icons green size-1_5">event</i>
-		<a class="green size-1_5" href="calendar-reminder.ics">&nbsp;<b>Agregar a mi calendario</b></a>
-	</div>
+	<a href="calendar-reminder.ics">
+		<p class="enfasis green" style="padding-bottom: 3px;">
+			<i class="material-icons green size-1_5">event</i>
+			&nbsp;<span style="font-size: 1.1vh">Agregar a mi calendario</span>
+		</p>
+		<p class="enfasis pink">
+			<i class="material-icons pink size-1_5">event</i>
+			&nbsp;<span style="font-size: 1.1vh">Add to my calendar</span>
+		</p>
+	</a>
 	<br>
-	<div class="center-boton">
-		<i class="material-icons pink size-1_5">event</i>
-		<a class="pink size-1_5" href="calendar-reminder.ics">&nbsp;<b>Add to my calendar</b></a>
-	</div>
 
 	<hr class="separator">
 
@@ -130,13 +133,13 @@
 
 	<!--* Map -->
 	<a href="https://www.google.com/maps/place/Parroquia+de+San+Ferm%C3%ADn+de+los+Navarros/@40.4326672,-3.6924765,15z/data=
-		!4m2!3m1!1s0x0:0x85bf579cd0b0d24?sa=X&ved=2ahUKEwjMt6W3wpP-AhUwdKQEHSTOATUQ_BJ6BQidARAI" class="color-def">
-		<p class="enfasis green">💒 La ceremonia <span class="color-def">|</span> <span class="pink">The ceremony</span>
+		!4m2!3m1!1s0x0:0x85bf579cd0b0d24?sa=X&ved=2ahUKEwjMt6W3wpP-AhUwdKQEHSTOATUQ_BJ6BQidARAI" class="color-def" style="font-size: 1.1vh;">
+		<p class="enfasis">💒 <span class="green">La ceremonia</span> | <span class="pink">The ceremony</span>
 		</p>
 	</a>
 	<a href="https://www.google.com/maps/place/Edificio+ABC+Serrano,+28006+Madrid/@40.432245,-3.6869492,17z/data=!4m6!3m5!1s0xd42289496e077a3:`
-			0x7a8ef62d6dcb8159!8m2!3d40.432245!4d-3.6869492!16s%2Fg%2F120z_bf7?hl=es" class="color-def">
-		<p class="enfasis green">🥂 La celebración <span class="color-def">|</span> <span class="pink">The venue</span>
+			0x7a8ef62d6dcb8159!8m2!3d40.432245!4d-3.6869492!16s%2Fg%2F120z_bf7?hl=es" class="color-def" style="font-size: 1.1vh;">
+		<p class="enfasis">🥂 <span class="green">La celebración</span> | <span class="pink">The venue</span>
 		</p>
 	</a>
 	<br />
@@ -151,7 +154,7 @@
 	<div id="map-container">
 		<div id="map"></div>
 	</div>
-	
+
 	<hr class="separator">
 
 	<!--* Contact -->
