@@ -28,6 +28,18 @@ var x = setInterval(function() {
   // Find the distance between now and the count down date
   var distance = weddingDate - now;
 
+  // Check if the countdown has finished
+  var divMostrar = document.getElementById("timeOnGoing");
+  var divOcultar = document.getElementById("timeOver");
+  if (distance<0) {
+    divMostrar.style.display = "block"; // Mostrar divMostrar
+    divOcultar.style.display = "none";   // Ocultar divOcultar
+    return;
+  } else {
+    divMostrar.style.display = "none";   // Ocultar divMostrar
+    divOcultar.style.display = "block";  // Mostrar divOcultar
+  }
+  
   // Time calculations for days, hours, minutes and seconds
   var days    = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -40,11 +52,6 @@ var x = setInterval(function() {
   document.getElementById("mins").innerHTML  = minutes;
   document.getElementById("secs").innerHTML  = seconds;
 
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "LLEGAS TARDE 😒 \nPero aún puedes mandarnos un mensaje felicitándonos! 😘";
-  }
 }, 1000);
 
 //! Call Google maps API
