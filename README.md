@@ -15,3 +15,8 @@ Proyecto para la gestión de una página web para las invitaciones y control de 
 - [X] Cuenta atrás para la fecha del evento.
 - [x] Opción de añadir a calendario de forma automática.
 - [x] Opción de añadir confirmación segura/tentativa/rechazo y guardar esa información.
+
+<br>
+
+> [!NOTE]
+> Proyecto cerrado
