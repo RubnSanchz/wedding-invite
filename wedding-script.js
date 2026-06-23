@@ -31,13 +31,13 @@ var x = setInterval(function() {
   // Check if the countdown has finished
   var divMostrar = document.getElementById("timeOnGoing");
   var divOcultar = document.getElementById("timeOver");
-  if (distance>0) {
-    divOcultar.style.display = "none";   // Ocultar divOcultar
-    return;
-  } else {
+  if (distance <= 0) {
     divMostrar.style.display = "none";   // Ocultar divMostrar
     divOcultar.style.display = "block";  // Mostrar divOcultar
+    clearInterval(x);                    // Detener el contador
+    return;
   }
+  divOcultar.style.display = "none";     // Ocultar divOcultar
 
   // Time calculations for days, hours, minutes and seconds
   var days    = Math.floor(distance / (1000 * 60 * 60 * 24));
