@@ -371,22 +371,6 @@ footer.bottom .links>a {
 }
 
 
-#messageContainer {
-	position: absolute;
-	bottom: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#messageBubble {
-	border-radius: 24px;
-	padding: 12px 24px;
-	width: 20vh;
-}
-
 #messageText {
 	color: var(--color-dark-gray);
 	margin: 0;

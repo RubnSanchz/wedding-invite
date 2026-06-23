@@ -166,12 +166,6 @@ copyText.addEventListener('click', () => {
   setTimeout(() => {
     messageContainer.style.display = 'none';
   }, 2500);
-  
-  messageContainer.style.display = 'contents'; // Muestra el contenedor del mensaje
-  // Después de 2.5 segundos, oculta el mensaje
-  setTimeout(() => {
-    messageContainer.style.display = 'none';
-  }, 2500);
 });
 
 //! Hide arrow down on scrollling
