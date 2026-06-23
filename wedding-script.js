@@ -60,7 +60,7 @@ function initMap() {
   const center = meanPosition(churchLocations, celebrationLocations)
   var map = new google.maps.Map(document.getElementById('map'), {
     center: center,
-    zoom: onMobile? 17 : 17,
+    zoom: 17,
     styles: styles["hide"]
   });
 
