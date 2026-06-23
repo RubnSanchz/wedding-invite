@@ -148,6 +148,9 @@ function unhide() {
   document.getElementById("account").classList = "";
 }
 
+//! Render account number from the single source of truth
+document.getElementById('accountNumber').textContent = ACCOUNT;
+
 //! Copy account number to clipboard
 const copyText = document.getElementById('account');
 const messageContainer = document.getElementById('copyMessage');
