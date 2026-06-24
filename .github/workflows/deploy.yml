@@ -24,17 +24,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Inject Google Maps API key from secret
-        env:
-          GMAPS_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
-        run: |
-          if [ -z "${GMAPS_KEY}" ]; then
-            echo "::error::Repository secret GOOGLE_MAPS_API_KEY is not set."
-            exit 1
-          fi
-          # The key is masked in logs; '|' delimiter is safe for Google API keys.
-          sed -i "s|__GOOGLE_MAPS_API_KEY__|${GMAPS_KEY}|g" index.html
-
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

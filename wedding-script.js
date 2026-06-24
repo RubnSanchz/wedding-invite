@@ -1,5 +1,4 @@
 const weddingDate = new Date("Dec 7, 2023 12:00:00 GMT+0200").getTime()
-const symbol1 = "http://maps.google.com/mapfiles/kml/paddle/ltblu-circle.png"
 const churchName = 'Parroquia San Fermín de los Navarros'
 const celebrationName = 'Edificio ABC Serrano'
 const ACCOUNT = 'ES57 0182 1294 1302 0065 7181'
@@ -10,14 +9,22 @@ const center = meanPosition(churchLocations, celebrationLocations)
 const onMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 const iniPhone = /iPhone|iPod/.test(navigator.userAgent);
 
-const styles = {
-  default: [],
-  hide: [
-    {
-      featureType: "poi.business",
-      stylers: [{ visibility: "off" }],
-    },
-  ],
+// Two free, key-less OpenStreetMap tile layers. "minimal" is a label-light
+// basemap (CartoDB Positron) used by default; "detailed" is the standard OSM
+// style that shows businesses and POIs — the equivalent of the old hide/show toggle.
+const TILE_LAYERS = {
+  minimal: {
+    url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    maxZoom: 20,
+  },
+  detailed: {
+    url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19,
+  },
 };
 
 //! Update the count down every 1 second
@@ -53,32 +60,32 @@ var x = setInterval(function() {
 
 }, 1000);
 
-//! Call Google maps API
+//! Render the venue map with Leaflet + OpenStreetMap (no API key, no billing)
 function initMap() {
-  const churchLocations = {lat: 40.432624, lng: -3.692425}
-  const celebrationLocations = {lat: 40.4323844, lng: -3.6871238}
-  const center = meanPosition(churchLocations, celebrationLocations)
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: center,
-    zoom: 17,
-    styles: styles["hide"]
-  });
+  const map = L.map("map").setView([center.lat, center.lng], 17);
 
-  // Add controls to the map, allowing users to hide/show features.
-  const styleControl = document.getElementById("style-selector-control");
+  let activeTiles = L.tileLayer(TILE_LAYERS.minimal.url, {
+    attribution: TILE_LAYERS.minimal.attribution,
+    maxZoom: TILE_LAYERS.minimal.maxZoom,
+  }).addTo(map);
 
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
-  // Apply new JSON when the user chooses to hide/show features.
+  // The hide/show radios swap the basemap (minimal vs. detailed) and zoom,
+  // mirroring the old "minimize information / show all places" toggle.
+  function applyLayer(key, zoom) {
+    map.removeLayer(activeTiles);
+    activeTiles = L.tileLayer(TILE_LAYERS[key].url, {
+      attribution: TILE_LAYERS[key].attribution,
+      maxZoom: TILE_LAYERS[key].maxZoom,
+    }).addTo(map);
+    map.setZoom(zoom);
+  }
+
   document.getElementById("hide-poi").addEventListener("click", () => {
-    map.setOptions({ styles: styles["hide"] });
+    applyLayer("minimal", 17);
   });
   document.getElementById("show-poi").addEventListener("click", () => {
-    map.setOptions({ 
-      styles: styles["default"],
-      zoom: onMobile? 17 : 15,
-    });
+    applyLayer("detailed", onMobile ? 17 : 15);
   });
-
 
   initMarkers(map);
 }
@@ -86,54 +93,40 @@ function initMap() {
 initMap();
 
 //! Markers on map
-function initMarkers(map) {
-  var pinSVGFilled = "M 12,2 C 8.1340068,2 5,5.1340068 5,9 c 0,5.25 7,13 7,13 0,0 7,-7.75 7,-13 0,-3.8659932 -3.134007,-7 -7,-7 z";
-  var labelOriginFilled =  new google.maps.Point(12,9);
-  var markerImage1 = { 
-    path: pinSVGFilled,
-    anchor: new google.maps.Point(12,17),
-    fillOpacity: 1,
-    fillColor: '#2e7dd6',
-    strokeWeight: 2,
-    strokeColor: "white",
-    scale: 2,
-    labelOrigin: labelOriginFilled
-  };
-
-  var markerImage2 = { 
-    path: pinSVGFilled,
-    anchor: new google.maps.Point(12,17),
-    fillOpacity: 1,
-    fillColor: '#c64ea0',
-    strokeWeight: 2,
-    strokeColor: "white",
-    scale: 2,
-    labelOrigin: labelOriginFilled
-  };
-
-  //* Marker church
-  new google.maps.Marker({
-    map,
-    position: churchLocations,
-    title: churchName,
-    label: {
-      text: "💒",
-      fontSize: "18px",
-    },
-    icon: markerImage1
+// Build a colored teardrop pin (same SVG path as the old Google markers) with
+// an emoji centered on it, rendered as a Leaflet divIcon.
+function makePin(color, emoji) {
+  const svg =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="52" viewBox="0 0 24 30">' +
+    '<path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z" ' +
+    'fill="' + color + '" stroke="white" stroke-width="1.2"/>' +
+    '<text x="12" y="10.5" font-size="8" text-anchor="middle" dominant-baseline="central">' +
+    emoji + '</text></svg>';
+  return L.divIcon({
+    html: svg,
+    className: "", // drop Leaflet's default white box around divIcons
+    iconSize: [40, 52],
+    iconAnchor: [20, 50],
+    tooltipAnchor: [0, -44],
   });
+}
+
+function initMarkers(map) {
+  //* Marker church
+  L.marker([churchLocations.lat, churchLocations.lng], {
+    icon: makePin("#2e7dd6", "💒"),
+    title: churchName,
+  })
+    .addTo(map)
+    .bindTooltip(churchName);
 
   //* Marker celebration
-  new google.maps.Marker({
-    position: celebrationLocations,
-    map: map,
+  L.marker([celebrationLocations.lat, celebrationLocations.lng], {
+    icon: makePin("#c64ea0", "🥂"),
     title: celebrationName,
-    label: {
-      text: "🥂",
-      fontSize: "18px",
-    },
-    icon: markerImage2
-  });
+  })
+    .addTo(map)
+    .bindTooltip(celebrationName);
 }
 
 
